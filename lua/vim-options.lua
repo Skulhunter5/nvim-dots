@@ -11,7 +11,20 @@ vim.opt.clipboard = "unnamedplus"
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
+vim.opt.number = true
 vim.opt.relativenumber = true
 
 vim.opt.cursorline = true
 vim.opt.cursorlineopt = "both"
+
+vim.opt.splitright = true
+vim.opt.splitbelow = true
+
+---------------------------
+-- experimental settings --
+---------------------------
+vim.opt.wrap = false
+
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+
