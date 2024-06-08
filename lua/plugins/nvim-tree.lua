@@ -9,15 +9,14 @@ return {
                 sorter = "case_sensitive",
             },
             view = {
-                width = {
-                    min = 40,
-                    max = -1,
-                },
+                adaptive_size = true,
+                width = 40,
                 side = "left",
                 signcolumn = "yes",
             },
-            renderer = {
-                group_empty = true,
+            update_focused_file = {
+                enable = true,
+                update_root = false,
             },
             filters = {
                 enable = true,
@@ -30,6 +29,7 @@ return {
                 show_on_open_dirs = false,
             },
             renderer = {
+                group_empty = true,
                 indent_markers = {
                     enable = true,
                 },
