@@ -9,8 +9,10 @@ return {
                 sorter = "case_sensitive",
             },
             view = {
-                adaptive_size = true,
-                width = 40,
+                width = {
+                    min = 40,
+                    max = 60,
+                },
                 side = "left",
                 signcolumn = "yes",
             },
