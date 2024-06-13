@@ -17,7 +17,7 @@ return {
         end,
     },
     {
-        'maxmx03/dracula.nvim',
+        "maxmx03/dracula.nvim",
     },
     {
         "alexmozaidze/palenight.nvim"
