@@ -12,6 +12,8 @@ return {
                     nvimtree = true,
                     treesitter = true,
                     cmp = true,
+                    dashboard = true,
+                    mason = true,
                 }
             })
             vim.cmd.colorscheme "catppuccin"

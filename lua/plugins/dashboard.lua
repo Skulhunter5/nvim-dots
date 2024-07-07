@@ -1,9 +1,3 @@
---[[return  {
-    "eoh-bse/minintro.nvim",
-    config = true,
-    lazy = false,
-}--]]
-
 return {
     {
         'nvimdev/dashboard-nvim',
@@ -12,9 +6,6 @@ return {
         },
         event = 'VimEnter',
         config = function()
-            vim.api.nvim_set_hl(0, "DashboardHeader", { fg = "#8aadf4" })
-            vim.api.nvim_set_hl(0, "DashboardProjectTitle", { fg = "#8aadf4" })
-            vim.api.nvim_set_hl(0, "DashboardMruTitle", { fg = "#8aadf4" })
             vim.api.nvim_set_hl(0, "DashboardUpdate", { fg = "#a6da95" })
 
             require('dashboard').setup({
