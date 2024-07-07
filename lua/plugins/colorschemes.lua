@@ -14,6 +14,7 @@ return {
                     cmp = true,
                     dashboard = true,
                     mason = true,
+                    gitsigns = true,
                 }
             })
             vim.cmd.colorscheme "catppuccin"
