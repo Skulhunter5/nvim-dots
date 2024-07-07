@@ -12,26 +12,19 @@ return {
         },
         event = 'VimEnter',
         config = function()
-            local logo = [[                                                   
-███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗ 
-████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║ 
-██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║ 
-██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║ 
-██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║ 
-╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝ 
-                                                   ]]
-            logo = string.rep("\n", 8) .. logo .. "\n\n"
-
+            vim.api.nvim_set_hl(0, "DashboardHeader", { fg = "#8aadf4" })
+            vim.api.nvim_set_hl(0, "DashboardProjectTitle", { fg = "#8aadf4" })
+            vim.api.nvim_set_hl(0, "DashboardMruTitle", { fg = "#8aadf4" })
+            vim.api.nvim_set_hl(0, "DashboardUpdate", { fg = "#a6da95" })
 
             require('dashboard').setup({
                 theme = "hyper",
                 config = {
-                    --[[week_header = {
+                    week_header = {
                         enable = true,
-                    },--]]
-                    header = vim.split(logo, "\n"),
+                    },
                     shortcut = {
-                        { desc = '󰊳 Update', group = '@property', action = 'Lazy update', key = 'u' },
+                        { desc = '󰊳 Update', group = 'DashboardUpdate', action = 'Lazy update', key = 'u' },
                     },
                     disable_move = true,
                     packages = { enable = true },
