@@ -11,6 +11,7 @@ return {
                 integrations = {
                     nvimtree = true,
                     treesitter = true,
+                    cmp = true,
                 }
             })
             vim.cmd.colorscheme "catppuccin"
