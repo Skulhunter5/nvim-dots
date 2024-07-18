@@ -21,11 +21,16 @@ return {
                     end,
                 },--]]
                 formatting = {
-                    format = function(_, vim_item)
-                        local kind = require("lspkind").presets.codicons[vim_item.kind]
-                        vim_item.menu = kind .. "  " .. vim_item.kind
-                        vim_item.kind = ""
-                        return vim_item
+                    format = function(entry, item)
+                        local icon = require("lspkind").presets.codicons[item.kind] or ""
+
+                        item.kind = icon .. "  " .. item.kind
+
+                        local detail = entry.completion_item.labelDetails.detail or ""
+                        item.abbr = item.abbr .. detail
+                        item.menu = ""
+
+                        return item
                     end
                 },
                 snippet = {
