@@ -26,8 +26,10 @@ return {
 
                         item.kind = icon .. "  " .. item.kind
 
-                        local detail = entry.completion_item.labelDetails.detail or ""
-                        item.abbr = item.abbr .. detail
+                        if entry.completion_item.labelDetails then
+                            local detail = entry.completion_item.labelDetails.detail or ""
+                            item.abbr = item.abbr .. detail
+                        end
                         item.menu = ""
 
                         return item
