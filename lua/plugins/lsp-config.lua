@@ -8,8 +8,18 @@ local lspconfig = {
         local lspconfig = require("lspconfig")
         lspconfig.lua_ls.setup({
             capabilities = capabilities,
+            settings = {
+                Lua = {
+                    diagnostics = {
+                        globals = { "vim" },
+                    },
+                },
+            },
         })
         lspconfig.rust_analyzer.setup({
+            capabilities = capabilities,
+        })
+        lspconfig.zls.setup({
             capabilities = capabilities,
         })
 
@@ -30,7 +40,7 @@ return (not utils.is_nixos()) and {
         "williamboman/mason-lspconfig.nvim",
         config = function()
             require("mason-lspconfig").setup({
-                ensure_installed = { "lua_ls", "rust_analyzer" },
+                ensure_installed = { "lua_ls", "rust_analyzer", "zls" },
             })
         end,
     },
