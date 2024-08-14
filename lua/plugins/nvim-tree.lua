@@ -52,6 +52,6 @@ return {
                 show_on_open_dirs = false,
             },
         })
-        vim.keymap.set("n", "<C-p>", "<cmd>NvimTreeToggle<CR>", {})
+        vim.keymap.set("n", "<C-n>", "<cmd>NvimTreeToggle<CR>", {})
     end,
 }

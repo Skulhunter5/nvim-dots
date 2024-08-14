@@ -16,7 +16,7 @@ return {
         })
 
         local command = require("neo-tree.command")
-        vim.keymap.set("n", "<C-n>", function ()
+        vim.keymap.set("n", "<C-p>", function ()
             command.execute({
                 action = "focus",
                 source = "filesystem",
