@@ -28,3 +28,4 @@ vim.opt.wrap = false
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
+vim.diagnostic.config({ virtual_text = true })

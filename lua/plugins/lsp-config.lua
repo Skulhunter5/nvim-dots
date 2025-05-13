@@ -67,9 +67,6 @@ local lspconfig = {
                 },
             },
         })
-        lspconfig.zls.setup({
-            capabilities = capabilities,
-        })
 
         vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
         vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
@@ -88,11 +85,9 @@ return (not utils.is_nixos()) and {
         "williamboman/mason-lspconfig.nvim",
         config = function()
             require("mason-lspconfig").setup({
-                ensure_installed = { "lua_ls", "rust_analyzer", "zls" },
+                ensure_installed = { "lua_ls" },
             })
         end,
     },
     lspconfig,
 } or lspconfig
-
-
