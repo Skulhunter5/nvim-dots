@@ -5,8 +5,7 @@ local lspconfig = {
     config = function()
         local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-        local lspconfig = require("lspconfig")
-        lspconfig.lua_ls.setup({
+        vim.lsp.config("lua_ls", {
             capabilities = capabilities,
             settings = {
                 Lua = {
@@ -16,7 +15,8 @@ local lspconfig = {
                 },
             },
         })
-        lspconfig.rust_analyzer.setup({
+        vim.lsp.enable({"lua_ls"})
+        vim.lsp.config("rust_analyzer", {
             capabilities = capabilities,
             on_attach = function(_, bufnr)
                 vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
@@ -25,6 +25,9 @@ local lspconfig = {
                 ["rust-analyzer"] = {
                     cargo = {
                         allFeatures = true,
+                    },
+                    check = {
+                        allTargets = false,
                     },
                     -- mostly default but some changes, so just to be safe
                     inlayHints = {
@@ -67,6 +70,7 @@ local lspconfig = {
                 },
             },
         })
+        vim.lsp.enable({"rust_analyzer"})
 
         vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
         vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
